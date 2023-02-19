@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+  <html lang="nb">
+	<head>
+		<meta charset="utf-8"/>
+		<title>DigiFab</title>
+		<link rel="stylesheet" type="text/css" href="CSS/css.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="DigiFab 2022/2023">
+		<meta name="keywords" content="personer, webutvikling, kontakt informasjon, shop, butikk, nettbutikk, ansatte, CEO, markedsfører, email, youzclothing">						
+		
+		<!-- Facebook Meta Tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<meta property="og:url" content="/*Nettsidens url*/">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Sosial media">
+		<meta property="og:description" content="Eksamen webutvikling 2020">
+		<meta property="og:image" content="bilde.png">
+		
+		<!--Twitter-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Article title!">
+		<meta property="twitter:url" content="/*Nettsidens url*/">
+		<meta property="twitter:domain" content="itstud.hiof.no">
+		<meta name="twitter:description" content="Eksamen webutvikling 2020">
+		<meta name="twitter:image" content="bilde.png">
+		
+	</head>
+
+	<body>
+		<header class="Header">
+			<nav role="navigation">
+				<a 	href="index.html">
+					<img src="CSS/Pictures/homeButton.png" alt="Hjem knapp" class="homeButton" width="30px" height="30px">
+				</a>
+				<!--<ul class="menybar">
+                    <a 	href="index.html">
+                        <img src="img/LitenLogo.png" alt="Bilde av initialer" class="homeButton" width="70px" height="50px">
+                    </a>					
+                    <li><a href="contact.html">Kontakt info</a> </li>
+                    <li><a href="projects.html">Prosjekter</a> </li>
+                    <li><a href="about.html">Om meg</a> </li>
+                    <li><a href="index.html">Hjem</a> </li>	
+                </ul> -->
+            </nav>
+            <h1>Oppgave 3</h1>
+		</header>
+	
+		<main>
+			<header class="headline" role="banner">
+				<h2>Elektronikk</h2>
+			</header>
+			<hr>
+			<div class="container">
+				<div class="text">
+					<h3>Oppgaven</h3>
+					<p>
+						Oppgaven inneholder flere temaer fra fagplanen om elektronikk og mikrokontrollere som Arduino, Raspberry Pi og ESP32. 
+						Disse temaene er relatert til hverandre og bygger på hverandre, og det blir enklere å jobbe med ett tema når man har kunnskap om de andre. 
+						Oppgaven går ut på å bruke utstyret som er tilgjengelig på MakerSpace og Arduino Starter kit settet eller annen elektronikk som blir delt 
+						ut i prosjektpakkene til å lage et eget prosjekt. Leveransen skal være en forklaring av prosjektet med bilder og informasjon om hvordan man 
+						kan bygge det selv, og koden og annet skal leveres i Github-repoet. Det er mulig å få ideer fra Arduino-boken som følger med startsettet 
+						eller andre steder på nettet, og man trenger ikke å forholde seg til temaet for sluttoppgaven. Oppgaven er en essensiell del av faget og er 
+						viktig for å kunne fullføre faget på en god måte. Studenter oppfordres til å hjelpe hverandre og bruke ressursene som er tilgjengelige på 
+						MakerSpace, videoene, livestreams og studass timene. Det er også mulig å jobbe sammen på prosjekter, men det er viktig at 
+						hver enkelt student viser at de forstår temaet og klarer å jobbe på egenhånd.
+					</p>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="text">
+					<h3>Løsning</h3>
+
+					<figure class="arduino-pic"> 
+						<img src="CSS/Pictures/arduino.jpg" alt="bilde av dataskjerm med css kode" width="500px" height="500px">		
+					</figure>
+
+					<p> Her er det brukt tre separate LED-lys (rød, gul og grønn) som hver er koblet til en 220 Ohm motstand og styres ved hjelp
+						 av PWM på de analoge utgangene 9, 10 og 11.
+						I loop()-funksjonen vil det aktive LED-lyset gradvis øke i lysstyrke fra 0 til 255 i en for-løkke og deretter fra 
+						255 ned til 0 i en annen for-løkke. Dette vil gjentas kontinuerlig med en pause på 10 ms mellom hvert trinn, 
+						slik at man kan se at lysstyrken øker og minsker.
+						En trykknapp er også koblet til digitalinngang 3 (D3) og brukes til å signalisere en interrupt. 
+						Det er satt opp en rising pulse, fra lav til høy. Det er implementert en metode for å unngå prelling/bounce, 
+						slik at det kun blir én puls fra bryteren og ikke flere repetisjoner i løpet av kort tid.
+						Når koden kjører, vil interrupt-rutinen sjekke om det har gått minst 200 millisekunder siden sist interrupt 
+						ble utført ved hjelp av millis()-funksjonen. Deretter vil fargen på LED-en som lyser endres, og hvis den siste LED-en 
+						allerede lyser, vil den første LED-en starte å lyse igjen. Hver LED vil lyse i en sekvens, og dette vil gjentas 
+						kontinuerlig.
+					</p>
+				</div>
+			</div>
+
+		</main>	
+
+		<footer>
+			<section class="footer-section">
+                <p>© 2022 Design & build by I.T.</p>
+			</section>	
+		</footer>
+	</body>  
+</html>
