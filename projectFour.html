@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+  <html lang="nb">
+	<head>
+		<meta charset="utf-8"/>
+		<title>DigiFab</title>
+		<link rel="stylesheet" type="text/css" href="CSS/css.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="DigiFab 2022/2023">
+		<meta name="keywords" content="personer, webutvikling, kontakt informasjon, shop, butikk, nettbutikk, ansatte, CEO, markedsfører, email, youzclothing">						
+		
+		<!-- Facebook Meta Tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<meta property="og:url" content="/*Nettsidens url*/">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Sosial media">
+		<meta property="og:description" content="Eksamen webutvikling 2020">
+		<meta property="og:image" content="bilde.png">
+		
+		<!--Twitter-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Article title!">
+		<meta property="twitter:url" content="/*Nettsidens url*/">
+		<meta property="twitter:domain" content="itstud.hiof.no">
+		<meta name="twitter:description" content="Eksamen webutvikling 2020">
+		<meta name="twitter:image" content="bilde.png">
+		
+	</head>
+
+	<body>
+		<header class="Header">
+			<nav role="navigation">
+				<a 	href="index.html">
+					<img src="CSS/Pictures/homeButton.png" alt="Hjem knapp" class="homeButton" width="30px" height="30px">
+				</a>
+				<!--<ul class="menybar">
+                    <a 	href="index.html">
+                        <img src="img/LitenLogo.png" alt="Bilde av initialer" class="homeButton" width="70px" height="50px">
+                    </a>					
+                    <li><a href="contact.html">Kontakt info</a> </li>
+                    <li><a href="projects.html">Prosjekter</a> </li>
+                    <li><a href="about.html">Om meg</a> </li>
+                    <li><a href="index.html">Hjem</a> </li>	
+                </ul> -->
+            </nav>
+            <h1>Oppgave 4</h1>
+		</header>
+	
+		<main>
+			<header class="headline" role="banner">
+				<h2>PCB Design</h2>
+			</header>
+			<hr>
+			<div class="container">
+				<div class="text">
+					<h3>Oppgaven</h3>
+					<p>
+						Man er nødt til å designe en fungerende og logisk PCB design som kan fabrikkeres. Om PCB’en er nyttig eller ikke er helt opp til en selv. 
+                        I tillegg må du ha en beskrivelse av designet med detaljer på koblingene samt valg av komponenter.
+					</p>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="text">
+					<h3>Open and close lid</h3>
+                    <p> Her det blitt gjort et forsøk på å lage et fungerende PCB design. Tanken er en PCB som skal kunne styre prosessen
+                        av å åpne og lukke et lokk. Lokket skal holde seg åpent i 3 sekunder før det lukkes igjen.
+					</p>
+                    <p>Schematic lagd i Eagle:
+					</p>
+					<figure class="arduino-pic"> 
+						<img src="CSS/Pictures/PCB_design1.png" alt="bilde av dataskjerm med css kode" width="1664px" height="650px">		
+					</figure>
+                    
+					<p>Valg av komponenter:
+					</p>
+                    <figure class="arduino-pic"> 
+						<img src="CSS/Pictures/komponenter.png" alt="bilde av dataskjerm med css kode" width="1664px" height="200px">		
+					</figure>
+                    <p>Komponentene som er brukt er valgt basert på hva som tidligere har blitt brukt i forelesning, 
+                        og som passer det jeg skal lage. Alt er hentet fra SparkFun Library.
+                         
+					</p>
+                    <p>
+                        Jeg har valgt å bruke ATmega328P, da vi har tilgang til disse gjennom skolen. 
+                        ATmega328P mikrokontrolleren har en innebygd Universal Asynchronous Receiver-Transmitter (UART) 
+                        som lar den kommunisere serielt med andre enheter. Jeg har valgt å koble den opp, 
+                        gjennom PIN 2 og 3 (PD0 og PD1), til en FTDI modul kalt SparkFun FTDI Basic Breakout - 5V. 
+                        Dette er en serial-to-USB coverter module som gjør at jeg kan aktivere seriell kommunikasjon mellom ATmega328P og
+                        en datamaskin, ved at modulen har et USB-grensesnitt som lar deg koble microcontrolleren til datamaskinen via en USB-kabel.
+                    </p>
+                    <p>
+                        For å kunne bruke ATmega328P trenger man å koble den opp til strøm og jording. Dette er gjort via PIN 7(VCC) for strøm, og PIN 8*2(GND)
+                        for jording. PIN 20(AVCC) er også koblet til strøm for å kunne bruke gi strøm til microcontrollerens analog-to-digital converter (ADC).
+                    </p>
+                    <p>
+                        Det er lagt inn en pushbutton fra SparkFun kalt COM-00097. Valg av knapp er ikke så viktig i denne sammengeng da 
+                        de fleste kortvarig trykkknapper vil egne seg, så jeg valgte den første som dukket opp i søkefeltet. 
+                        Når denne knappen blir presset ned, vil PIN 1 bli high til VCC 
+                        og microcontrolleren vil bli resatt. 
+                        Når knappet blir sluppet, vil PIN 1 bli low pga pull-down resistoren.
+                    </p>
+                    <p>
+                        Denne pull-down resistoren er plassert mellom PIN 1 (VCC) og GND, dette for å sikre at pinnen ikke 
+                        flyter når trykknappen ikke trykkes inn. Et vanlig valg for pull-down resistorer er 10kΩ, jeg har derfor valgt dette.
+                    </p>
+                    <p>Board:
+					</p>
+                    <figure class="arduino-pic"> 
+						<img src="CSS/Pictures/PCB_design2.png" alt="bilde av dataskjerm med css kode" width="664px" height="650px">		
+					</figure>
+                    
+				</div>
+			</div>
+
+		</main>	
+
+		<footer>
+			<section class="footer-section">
+                <p>© 2022 Design & build by I.T.</p>
+			</section>	
+		</footer>
+	</body>  
+</html>
