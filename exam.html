@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+  <html lang="nb">
+	<head>
+		<meta charset="utf-8"/>
+		<title>DigiFab</title>
+		<link rel="stylesheet" type="text/css" href="CSS/css.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="DigiFab 2022/2023">
+		<meta name="keywords" content="Digifab">						
+	</head>
+
+	<body>
+		<header class="Header">
+			<nav role="navigation">
+				<a 	href="index.html">
+					<img src="CSS/Pictures/homeButton.png" alt="Hjem knapp" class="homeButton" width="30px" height="30px">
+				</a>
+				<!--<ul class="menybar">
+                    <a 	href="index.html">
+                        <img src="img/LitenLogo.png" alt="Bilde av initialer" class="homeButton" width="70px" height="50px">
+                    </a>					
+                    <li><a href="contact.html">Kontakt info</a> </li>
+                    <li><a href="projects.html">Prosjekter</a> </li>
+                    <li><a href="about.html">Om meg</a> </li>
+                    <li><a href="index.html">Hjem</a> </li>	
+                </ul> -->
+            </nav>
+            <h1>Eksamensprosjekt</h1>
+		</header>
+	
+		<main>
+			<header class="headline" role="banner">
+				<h2>Automatisk Food Dispenser</h2>
+			</header>
+			<hr>
+			<div class="container">
+				<div class="text">
+					<h3>Oppgaven</h3>
+					<p>
+						Eksamensoppgaven går ut på å lage et kryss-disiplinært prosjekt som dekker så mange av temaene vi har gått igjennom som mulig. 
+                        Det stilles selvfølgelig ikke krav til at du må benytte deg av alle temaene som er dekket i faget, men det stilles et minimum at 
+                        prosjektet må dekke minst 2 temaer 
+                        innen digital fabrikasjon (3D printing, Laserkutting/gravering, Vinylkutting, PCB milling og CNC maskinering) og benytte seg av elektronikk.
+                        Årets tema er «Global oppvarming og klimautfordringer», og alle sluttprosjekter må utvikles innenfor dette temaet.
+					</p>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="text">
+					<h3>Løsning</h3>
+
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/aepozjc6Dbw" title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+                    </iframe>
+
+					<p> 
+                        Sluttresultatet er en prototype som tar imot røyksneiper, og deretter gir ut en porsjon med mat. 
+                        Målet var å lage et system som gjør dette automatisk ved bruk av bildegjenkjenning. Slik det er nå må 
+                        dette kontrolleres og koden må kjøres manuelt for hver gang.
+                        Det ble forsøkt ulike metoder for å tilnærme seg et system som fungerer med bildegjenkjenning. 
+                        Blant annet ble det fulgt en guide publisert av <i><a href="https://core-electronics.com.au/guides/object-identify-raspberry-pi/#Set">Core Electronics</a></i>, 
+                        en instruksjon fra <i><a href="https://www.instructables.com/Object-Detection-on-Raspberry-Pi/">Autodesk Intructables</a></i> 
+                        og ChatGPT. Problemet var utdaterte biblioteker, linker som var fjernet og installasjoner som fikk 
+                        Raspberry Pi-en til å krasje.                        
+					</p>
+				</div>
+			</div>
+
+		</main>	
+
+		<footer>
+			<section class="footer-section">
+                <p>© 2022 Design & build by I.T.</p>
+			</section>	
+		</footer>
+	</body>  
+</html>
